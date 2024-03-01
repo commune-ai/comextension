@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "short_name": "Commune",
+  "name": "Commune Wallet",
+  "version": "1.0",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "64": "images/icon-64.png",
+    "128": "images/icon-128.png"
+  },
+  "description": "Manage your Commune accounts outside of dapps. Injects the accounts and allows signing transactions for a specific account.",
+  "action": {
+    "default_title": "Commune",
+    "default_popup": "index.html"
+  }
+}
