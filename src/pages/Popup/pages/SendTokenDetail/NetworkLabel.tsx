@@ -1,9 +1,10 @@
-import { Select, Option, SelectOptionProps, SelectProps } from "@material-tailwind/react";
-import React, { useState } from "react";
+import { Select, Option } from "@material-tailwind/react";
+import { useState } from "react";
 
 
 export const NetworkLabel = () => {
-    const [selectedOption, setSelectedOption] = useState('');
+    const [selectedOption, setSelectedOption] = useState<string>('');
+
     const handleSelectChange = (event:any) => {
         setSelectedOption(event.target.value);
     }
@@ -18,6 +19,7 @@ export const NetworkLabel = () => {
                 className="text-white bg-inherit"
                 color="gray"
                 size="lg"
+                onChange={(e) => handleSelectChange(e)}
             >
                 <Option value="Ethereum">Ethereum</Option>
                 <Option value="Bitcoin" >Bitcoin</Option>

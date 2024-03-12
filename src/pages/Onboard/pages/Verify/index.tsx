@@ -1,4 +1,4 @@
-import React from "react";
+
 import { VerifyWordContainer } from "./VerifyWordContainer";
 import { Button } from "../../components/Button";
 import { useNavigate } from "react-router-dom";

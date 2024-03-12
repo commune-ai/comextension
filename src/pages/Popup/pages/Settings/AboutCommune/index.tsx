@@ -1,13 +1,14 @@
-import React from "react";
-import { BackHeader } from "../../../container";
 import { AboutCommuneItemContainer } from "./AboutCommuneItemContainer";
+import { BackHeader } from "../../../container";
 import image from "../../../assets/images/finishCreateProfile.png";
 
 export const AboutCommune = () => {
 
     return (
         <div className="popup-container">
-            <BackHeader headerTitle="" />
+            <BackHeader
+                headerTitle="About Commune"
+            />
             <img
                 src={image}
                 alt="About Commune.AI"

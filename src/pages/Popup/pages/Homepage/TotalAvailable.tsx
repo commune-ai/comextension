@@ -1,6 +1,6 @@
-import React from "react";
 
 export const TotalAvailable = ({amount}: {amount: number}) => {
+    
     return (
         <div className="w-full bg-inherit mt-8 text-center">
             <p className="text-base text-[#717173]">

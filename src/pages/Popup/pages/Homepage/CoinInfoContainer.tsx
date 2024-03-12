@@ -1,11 +1,10 @@
-import React from "react";
-type CoinInfo = {
+interface CoinInfo {
     icon: any;
     coinTitle: string;
     chainTitle: string;
     amount: number;
     value: number;
-  };
+};
 
 export const CoinInfoContainer = ({coinInfo}: {coinInfo: any}) => {
     

@@ -1,4 +1,4 @@
-import React from "react";
+
 import communeImage from "../../assets/images/icon-84-86.png";
 
 const WELCOME = 'Welcome to Commune ai'

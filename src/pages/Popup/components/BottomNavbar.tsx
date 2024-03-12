@@ -1,28 +1,35 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import { ButtonIcon } from "./Icon/ButtonIcon";
-import { useNavigate } from "react-router-dom";
 
 export const BottomNavbar = ({selectedMenuItem}: {selectedMenuItem: string}) => {
     const navigate = useNavigate();
-    const buttonTitles = [
+
+    const buttonTitles:ButtonTypeProps[] = [
         'Home',
         'Earn',
         'History',
         'Settings', 
     ]
-    const onNavbarButtonClicked = (buttonTitle: string) => {
-        if (buttonTitle === 'Home') {
-            navigate('/homepage');
-        }
-        if (buttonTitle === 'Earn') {
-            navigate('/earn');
-        }
-        if (buttonTitle === 'History') {
-            navigate('/history');
-        }
-        if (buttonTitle === 'Settings') {
-            navigate('/setting');
+
+    type ButtonTypeProps = 'Home' | 'Earn' | 'History' | 'Settings';
+
+    const onNavbarButtonClicked = (buttonTitle: ButtonTypeProps) => {
+        switch (buttonTitle) {
+            case 'Home':
+              navigate('/homepage');
+              break;
+            case 'Earn':
+              navigate('/earn');
+              break;
+            case 'History':
+              navigate('/history');
+              break;
+            case 'Settings':
+              navigate('/setting');
+              break;
+            default:
+              break;
         }
     }
 
@@ -30,14 +37,17 @@ export const BottomNavbar = ({selectedMenuItem}: {selectedMenuItem: string}) => 
         <div className="flex justify-between items-center mt-6 w-72 h-14 px-6 bg-[#262632] rounded-2xl">
             {
                 buttonTitles.map(buttonTitle => {
-                    console.log('buttonTitle', typeof(buttonTitle))
                     return (
                         <div
-                            className={clsx(
-                                "flex flex-col items-center cursor-pointer text-sm",
-                                selectedMenuItem === buttonTitle && "text-[#D97A7A]",
-                                selectedMenuItem !== buttonTitle && "text-[#717173]"
-                            )}
+                            className={
+                                clsx(
+                                    "flex flex-col items-center cursor-pointer text-sm hover:text-white transition-all duration-300",
+                                    {
+                                        "text-[#D97A7A]" : selectedMenuItem === buttonTitle,
+                                        "text-[#717173]" : selectedMenuItem !== buttonTitle,
+                                    }
+                                )
+                            }
                             onClick={() => onNavbarButtonClicked(buttonTitle)}
                         >
                             <ButtonIcon iconName={buttonTitle} />

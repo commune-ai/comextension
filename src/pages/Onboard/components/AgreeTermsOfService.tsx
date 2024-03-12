@@ -1,4 +1,4 @@
-import React from "react";
+
 import { AgreeTermsOfServiceProps } from "../types";
 
 export const AgreeTermsOfService = ({isChecked, checkBoxToggle}: AgreeTermsOfServiceProps) => {

@@ -1,36 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { MaxAmountLabel } from "../../components";
-import { BackHeader } from "../../container";
-import communeImage from "../../assets/images/icon-46-48.png";
+import { useEffect, useState } from "react";
 import { NetworkLabel } from "./NetworkLabel";
 import { RecipientAddress } from "./RecipientAddress";
-import { Button } from "../../components";
+import { BackHeader } from "../../container";
+import { MainActiveButton } from "../../components";
+import { MaxAmountLabel } from "../../components";
+import communeImage from "../../assets/images/icon-46-48.png";
 
 export const SendTokenDetail = () => {
 
     const headerTitle = 'Send Commune.ai';
-    const [amount, setAmount] = useState();
-    const [maxAmount, setMaxAmount] = useState(1000000.67);
-    const [address, setAddress] = useState('');
-    const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(true);
+    const [amount, setAmount] = useState<number>();
+    const [maxAmount, setMaxAmount] = useState<number>(1000000.67);
+    const [address, setAddress] = useState<string>('');
+    const [isNextButtonDisabled, setIsNextButtonDisabled] = useState<boolean>(true);
 
     const onNextButtonClicked = () => {
-
+        console.log('next button clicked');
     }
     const validateInputData = () => {
-        console.log('')
         if (amount && address.trim()) {
             setIsNextButtonDisabled(false);
         } else {
             setIsNextButtonDisabled(true);
         }
-    }
-
-    const NextButtonProps = {
-        title: 'Next',
-        buttonStyle: "rounded-2xl bg-[#D97A7A] text-[#F7FBFF] disabled:bg-[#262632] disabled:text-[#717173] text-base w-72 h-12 mt-24",
-        isDisabled: isNextButtonDisabled,
-        onClick: onNextButtonClicked,
     }
 
     useEffect(() => {
@@ -57,7 +49,13 @@ export const SendTokenDetail = () => {
                 setAmount={setAmount}
                 maxAmount={maxAmount}
             />
-            <Button {...NextButtonProps} />
+            <div className="mt-24">
+                <MainActiveButton
+                    title='Next'
+                    isDisabled={isNextButtonDisabled}
+                    onClick={onNextButtonClicked}
+                />
+            </div>
         </div>
     )
 }

@@ -1,15 +1,9 @@
-import { Button } from "../button/Button"
-import { MaxAmountLabelProps } from "../../types"
+import { MaxAmountLabelProps } from "../../types";
 
 export const MaxAmountLabel = ({amount, setAmount, maxAmount}: MaxAmountLabelProps) => {
 
     const onMaxButtonClicked = () => {
         setAmount(maxAmount);
-    }
-    const MaxButtonProps = {
-        title: 'Max',
-        buttonStyle: "absolute bottom-1/2 transform translate-y-1/2 right-4 rounded-2xl bg-[#262632] text-white text-base disabled:text-[#717173] w-[56px] h-[26px]",
-        onClick: onMaxButtonClicked,
     }
 
     return (
@@ -23,7 +17,12 @@ export const MaxAmountLabel = ({amount, setAmount, maxAmount}: MaxAmountLabelPro
                     className="w-full h-full bg-inherit border-[#262632] rounded-xl text-base text-white pl-4"
                     onChange={(e) => setAmount(parseFloat(e.target.value))}
                 />
-                <Button {...MaxButtonProps}/>
+                <button
+                    className="absolute bottom-1/2 transform translate-y-1/2 right-4 rounded-2xl bg-[#262632] text-white text-base disabled:text-[#717173] w-[56px] h-[26px]"
+                    onClick={onMaxButtonClicked}
+                >
+                    Max
+                </button>
             </div>
         </div>
     )

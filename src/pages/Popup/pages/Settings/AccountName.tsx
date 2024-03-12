@@ -1,9 +1,9 @@
-import React from "react";
-import { IoMdArrowDropright } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { IoMdArrowDropright } from "react-icons/io";
 
 export const AccountName = ({accountName}: {accountName: string}) => {
     const navigate = useNavigate();
+
     const onAccountClicked = () => {
         navigate('/edit-account');
     }
@@ -14,7 +14,10 @@ export const AccountName = ({accountName}: {accountName: string}) => {
             onClick={onAccountClicked}
         >
             {accountName}
-            <IoMdArrowDropright className="absolute right-3 bottom-1/2 transform translate-y-1/2 text-lg"/>
+            
+            <IoMdArrowDropright
+                className="absolute right-3 bottom-1/2 transform translate-y-1/2 text-lg"
+            />
         </div>
     )
 }

@@ -1,7 +1,7 @@
 {
-  "name": "chrome-extension-boilerplate-react",
+  "name": "extension",
   "version": "4.0.1",
-  "description": "A chrome extension boilerplate built with React 17 and Webpack 5",
+  "description": "Com extension built with React 18 and Webpack 5",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,7 +13,6 @@
     "prettier": "prettier --write '**/*.{js,jsx,css,html}'"
   },
   "dependencies": {
-    "@hot-loader/react-dom": "^17.0.1",
     "@material-tailwind/react": "^2.1.9",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

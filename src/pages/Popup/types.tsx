@@ -1,8 +1,12 @@
 
 export interface ButtonProps {
     title: string,
-    buttonStyle: string,
-    isDisabled?: boolean,
+    onClick: () => void,
+}
+
+export interface ActiveButtonProps {
+    title: string,
+    isDisabled: boolean,
     onClick: () => void,
 }
 
@@ -16,17 +20,6 @@ export interface TokenSearchProps {
     selectedToken: string,
     setSelectedTokenClass: React.Dispatch<React.SetStateAction<string>>,
     setSelectedToken: React.Dispatch<React.SetStateAction<string>>,
-}
-
-export interface IconButtonProps {
-    buttonTitle: string,
-    onClickHandler: () => void,
-}
-
-export interface CoinProps {
-    chainTitle: string,
-    coinName: string,
-    onClickHandler: () => void,
 }
 
 export interface MaxAmountLabelProps {
@@ -66,13 +59,8 @@ export interface settingItemProps {
     onItemClicked: () => void,
 }
 
-export interface TradeToggleButtonProps {
-    selectedButtonTitle: string,
-    onTradeButtonToggle: () => void,
-}
-
-export interface TradeItemProps {
-    tradeItemTitle: string,
-    coinName: string,
-    amount: number,
+export interface CopyToClipBoardWithEyeToggleProps {
+    showContent: boolean,
+    onEyeToggleClicked: () => void,
+    onCopyToClipboardClicked: () => void,
 }

@@ -1,16 +1,17 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { SettingItem } from "../../components";
 import { settingItemProps } from "../../types";
 
 export const SecuritySetting = () => {
     const navigate = useNavigate();
+
     const onSecurityClicked = () => {
         navigate('/secret-privacy-settings')
     }
     const onDappClicked = () => {
         console.log('onDappClicked');
     }
+
     const securitySettings: settingItemProps[] = [
         {
             title: 'Security and Privacy',

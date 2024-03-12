@@ -1,7 +1,11 @@
-import React from "react";
 import { AiOutlineExport } from "react-icons/ai";
 
-export const AboutCommuneItem = ({itemTitle, onItemClicked}: {itemTitle: string, onItemClicked: () => void}) => {
+interface AboutCommuneItemProps {
+    itemTitle: string,
+    onItemClicked: () => void,
+}
+
+export const AboutCommuneItem = ({itemTitle, onItemClicked}: AboutCommuneItemProps) => {
 
     return (
         <div
@@ -12,7 +16,9 @@ export const AboutCommuneItem = ({itemTitle, onItemClicked}: {itemTitle: string,
                 {itemTitle}
             </p>
             <div className="w-6 h-6 bg-[#1D1D26] rounded-full">
-                <AiOutlineExport className="text-[#737A82] text-lg" />
+                <AiOutlineExport
+                    className="text-[#737A82] text-lg"
+                />
             </div>
         </div>
     )

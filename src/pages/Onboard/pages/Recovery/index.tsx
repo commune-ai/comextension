@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import copyTextToClipboard from "copy-text-to-clipboard";
 import { useNavigate } from "react-router-dom";
 import { SecretWordContainer } from "./SecretWordContainer";

@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { TotalAvailable } from "./TotalAvailable";
 import { ButtonContainer } from "./ButtonContainer";
@@ -6,8 +5,7 @@ import { TokenSearchBoard } from "./TokenSearchBoard";
 import { BottomNavbar } from "../../components";
 
 export const Homepage = () => {
-    const [amount, setAmount] = useState(0);
-    const selectedMenuItem = 'Home';
+    const [amount, setAmount] = useState<number>(0);
 
     return (
         <>
@@ -15,7 +13,7 @@ export const Homepage = () => {
             <ButtonContainer />
             <TokenSearchBoard />
             <BottomNavbar
-                selectedMenuItem={selectedMenuItem}
+                selectedMenuItem='Home'
             />
         </>
     )

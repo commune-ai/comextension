@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { InputPasswordProps } from "../../types"
 import { LuEye } from "react-icons/lu";
 import { RiEyeCloseFill } from "react-icons/ri";
 
-const LABEL = 'Enter password'
 export const InputPassword = ({password, setPassword}: InputPasswordProps) => {
     const [showPassword, setShowPassword] = useState(false);
+
     const onEyeToggleClicked = () => {
         setShowPassword((prev) => !prev);
     }
+    
     return (
         <div className="flex flex-col w-[288px] gap-3 mt-8">
             <label
                 htmlFor="password"
                 className="text-[#717173] text-sm pl-4"
             >
-                {LABEL}
+                Enter password
             </label>
             <div className="relative w-full h-12">
                 <input 

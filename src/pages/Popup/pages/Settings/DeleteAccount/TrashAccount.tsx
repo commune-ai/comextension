@@ -1,4 +1,3 @@
-import React from "react";
 import { FaTrash } from "react-icons/fa6";
 
 export const TrashAccount = ({accountName}: {accountName: string}) => {
@@ -7,7 +6,9 @@ export const TrashAccount = ({accountName}: {accountName: string}) => {
     return (
         <div className="flex flex-col items-center mt-8">
             <div className="flex justify-center items-center w-32 h-32 border border-[#E32020] rounded-full">
-                <FaTrash className="text-8xl text-[#E32020]" />
+                <FaTrash
+                    className="text-8xl text-[#E32020]"
+                />
             </div>
             <p className="text-xl text-white mt-4">
                 Remove &nbsp;{accountName}

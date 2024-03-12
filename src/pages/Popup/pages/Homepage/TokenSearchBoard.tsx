@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useState } from "react";
 import { TokenSearch } from "./TokenSearch";
 import { CoinInfoContainer } from "./CoinInfoContainer";
@@ -31,8 +31,9 @@ const coinInfo = [
 ]
 
 export const TokenSearchBoard = () => {
-    const [selectedToken, setSelectedToken] = useState('');
-    const [selectedTokenClass, setSelectedTokenClass] = useState('Crypto');
+    const [selectedToken, setSelectedToken] = useState<string>('');
+    const [selectedTokenClass, setSelectedTokenClass] = useState<'Crypto' | 'NFTs'>('Crypto');
+
     return (
         <div className="w-full mt-5">
             <TokenSearch

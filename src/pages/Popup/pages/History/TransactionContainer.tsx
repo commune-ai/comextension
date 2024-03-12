@@ -1,4 +1,4 @@
-import React from "react";
+
 import { TransactionItem } from "./TransactionItem";
 import { TransactionItemProps } from "../../types";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { SettingItem } from "../../components";
 import { settingItemProps } from "../../types";
@@ -15,6 +14,7 @@ export const BasicSetting = () => {
     const onNetworkClicked = () => {
         navigate('/network');
     }
+
     const basicSettingProps: settingItemProps[] = [
         {
             title: 'Manage Account',
@@ -34,7 +34,6 @@ export const BasicSetting = () => {
         <div className="flex flex-col items-center gap-[2px] mt-4">
             {
                 basicSettingProps.map((basicSettingProp) => {
-
                     return (
                         <SettingItem {...basicSettingProp}/>
                     )

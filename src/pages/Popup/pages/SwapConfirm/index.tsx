@@ -1,7 +1,6 @@
-import React from "react";
 
 export const SwapConfirm = () => {
     return (
-        <div></div>
+        <div> Swap Confirm</div>
     )
 }

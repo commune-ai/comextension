@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Logo } from "../components/Logo";
 
 export const CommonLayout = ({ children }: { children: React.ReactElement }) => {

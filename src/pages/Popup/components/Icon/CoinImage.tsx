@@ -1,4 +1,3 @@
-import React from 'react';
 import communeImage from '../../assets/images/Commune-32.png';
 import btcImage from '../../assets/images/btc.png';
 import bnbImage from '../../assets/images/bnb.png';
@@ -12,7 +11,7 @@ import solanaImage from '../../assets/images/Solana.png';
 
 
 export const CoinImage = ({chainTitle}: {chainTitle: string}) => {
-    console.log('ChainTitle', chainTitle)
+
     return (
         <div className="w-8 h-8">
             {

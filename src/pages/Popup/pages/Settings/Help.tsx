@@ -1,10 +1,10 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { SettingItem } from "../../components";
 import { settingItemProps } from "../../types";
 
 export const Help = () => {
     const navigate = useNavigate();
+
     const onHelpClicked = () => {
         console.log('onHelpClicked');
     }

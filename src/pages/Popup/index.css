@@ -26,46 +26,6 @@ code {
   background-color: #0f0f12;
 }
 
-.test-text {
-  text-align: center;
-  font-size: x-large;
-  color: white;
-  padding-top: 60px;
-  cursor: pointer;
-}
-
-.popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 52px;
-  padding-inline: 16px;
-  background-color: #121316;
-  box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.25);
-}
-
-.button-with-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding-block: 11px;
-  padding-inline: 16px;
-  background-color: #262632;
-  border-radius: 10px;
-}
-
-.button-icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  background-color: #d97a7a;
-  border-radius: 50%;
-}
-
 .hide-scrollbar::-webkit-scrollbar {
   width: 0;
   background-color: transparent;
@@ -79,10 +39,15 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.two-button-wrapper {
+.two-button-container {
   display: flex;
   justify-content: center;
   gap: 16px;
   width: 100%;
   margin-top: 64px;
+}
+
+.blur {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }

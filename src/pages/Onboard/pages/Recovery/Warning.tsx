@@ -1,4 +1,4 @@
-import React from "react";
+
 import { IoIosWarning } from "react-icons/io";
 
 export const Warning = () => {

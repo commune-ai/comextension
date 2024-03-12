@@ -1,6 +1,5 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
 import { CoinAmount } from "../components/CoinAmount";
+
 export const CoinContainer = ({onCoinClicked}: {onCoinClicked: () => void}) => {
 
     const coins = [

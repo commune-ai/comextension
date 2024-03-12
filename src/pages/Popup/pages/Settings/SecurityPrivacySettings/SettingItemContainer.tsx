@@ -1,17 +1,20 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import { SettingItem } from "../../../components";
 import { settingItemProps } from "../../../types";
 
 export const SettingItemContainer = () => {
+    const navigate = useNavigate();
+
     const onConnectedWebsiteClicked = () => {
-        console.log('onConnectedWebsiteClicked')
+        navigate('/connected-websites');
     }
     const onChangePasswordClicked = () => {
-        console.log('onChangePasswordClicked')
+        navigate('/change-password');
     }
     const onAutoLockTimerClicked = () => {
-        console.log('onAutoLockTimerClicked')
+        navigate('/auto-lock');
     }
+
     const settingItemProps: settingItemProps[] = [
         {
             title: 'Connected Website',
@@ -26,6 +29,7 @@ export const SettingItemContainer = () => {
             onItemClicked: onAutoLockTimerClicked,
         }
     ]
+    
     return (
         <div className="flex flex-col gap-2 items-center mt-6">
             {

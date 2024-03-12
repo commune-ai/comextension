@@ -1,4 +1,4 @@
-import React from "react";
+
 // Main Operation Button Icons
 import { LiaMoneyBillSolid } from "react-icons/lia";
 import { MdOutlineFileUpload } from "react-icons/md";
@@ -33,15 +33,15 @@ export const ButtonIcon = ({iconName}: {iconName: string}) => {
 
             {
                 iconName === 'Send' &&
-                <MdOutlineFileUpload className="text-[#262632]" />
+                <MdOutlineFileUpload className="text-[#262632] text-lg" />
             }
             {
                 iconName === 'Receive' &&
-                <MdOutlineFileDownload className="text-[#262632]" />
+                <MdOutlineFileDownload className="text-[#262632] text-lg" />
             }
             {
                 iconName === 'Buy' &&
-                <LiaMoneyBillSolid className="text-[#262632]" />
+                <LiaMoneyBillSolid className="text-[#262632] text-lg" />
             }
 
         </>

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { AboutCommuneItem } from "./AboutCommuneItem";
 
 export const AboutCommuneItemContainer = () => {
@@ -7,6 +7,7 @@ export const AboutCommuneItemContainer = () => {
         'Privacy policy',
         'Website'
     ]
+    
     const onTermsOfServiceClicked = () => {
         console.log('onTermsOfServiceClicked');
     }
@@ -16,6 +17,7 @@ export const AboutCommuneItemContainer = () => {
     const onWebsiteClicked = () => {
         console.log('onWebsiteClicked');
     }
+
     return (
         <div className="flex flex-col items-center gap-2 w-full mt-8">
             <AboutCommuneItem

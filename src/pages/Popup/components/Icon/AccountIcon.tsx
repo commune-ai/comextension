@@ -1,4 +1,4 @@
-import React from "react";
+
 import { VscAccount } from "react-icons/vsc";
 
 export const AccountIcon = ({accountName}: {accountName: string}) => {

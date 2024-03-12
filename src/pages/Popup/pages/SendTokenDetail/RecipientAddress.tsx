@@ -1,7 +1,10 @@
-import React from "react";
 import { MdOutlineDashboard } from "react-icons/md";
 
-export const RecipientAddress = ({address, setAddress}: {address: string, setAddress: React.Dispatch<React.SetStateAction<string>>}) => {
+interface RecipientAddressProps {
+    address: string,
+    setAddress: React.Dispatch<React.SetStateAction<string>>
+}
+export const RecipientAddress = ({address, setAddress}: RecipientAddressProps) => {
 
     // const onMaxButtonClicked = () => {
     //     setAmount(maxAmount);
@@ -9,7 +12,9 @@ export const RecipientAddress = ({address, setAddress}: {address: string, setAdd
 
     return (
         <div className="flex flex-col items-start gap-1 w-[350px] mb-6">
-            <p className="text-lg text-[#cccccc]">Recipient address</p>
+            <p className="text-lg text-[#cccccc]">
+                Recipient address
+            </p>
             <div className="relative w-[350px] h-12 border border-[#cccccc] rounded-xl">
                 <input
                     type="text"

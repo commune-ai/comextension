@@ -1,4 +1,4 @@
-import React from "react";
+
 import { SecretWordWrapper } from "./SecretWordWrapper";
 import clsx from "clsx";
 
@@ -12,7 +12,10 @@ export const SecretWordContainer = ({words, showSecretWords}: {words: string[], 
         >
             {
                 words.map((word, index) => (
-                    <SecretWordWrapper word={word}/>
+                    <SecretWordWrapper
+                        key={index}
+                        word={word}
+                    />
                 ))
             }
         </div>

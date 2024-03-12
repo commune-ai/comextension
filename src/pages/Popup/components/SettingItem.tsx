@@ -1,4 +1,4 @@
-import React from "react";
+
 import { settingItemProps } from "../types";
 import { IoMdArrowDropright } from "react-icons/io";
 

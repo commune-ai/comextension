@@ -1,7 +1,7 @@
-import React from "react";
 import { SlCalender } from "react-icons/sl";
 
 export const Calender = () => {
+
     return (
         <div className="flex justify-between px-3 mt-3 w-full">
             <p className="text-base text-white">

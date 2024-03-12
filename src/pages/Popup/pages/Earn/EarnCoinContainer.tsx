@@ -1,4 +1,3 @@
-import React from "react";
 import { Coin } from "../../components";
 
 export const EarnCoinContainer = () => {
@@ -43,12 +42,17 @@ export const EarnCoinContainer = () => {
             {
                 coins.map((coin) => {
                     return(
-                        <div className="flex items-center justify-between w-80 h-20 px-3 py-3 bg-[#121316] rounded cursor-pointer" onClick={onCoinClicked}>
+                        <div
+                            className="flex items-center justify-between w-80 h-20 px-3 py-3 bg-[#121316] rounded cursor-pointer"
+                            onClick={onCoinClicked}
+                        >
                             <Coin
                                 coinName={coin.coinName}
                                 chainTitle={coin.chainTitle}
                             />
-                            <p className="text-base text-[#D97A7A]">APR - 11.23%</p>
+                            <p className="text-base text-[#D97A7A]">
+                                APR - 11.23%
+                            </p>
                         </div>
                     )
                 })

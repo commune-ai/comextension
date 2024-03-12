@@ -1,4 +1,4 @@
-import React from "react";
+
 import logoImage from "../assets/images/icon-46-48.png";
 
 // const image = require("/images/icon-86-84.png")

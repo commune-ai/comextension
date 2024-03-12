@@ -1,31 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import image from '../../assets/images/icon-84-86.png';
-import { InputPassword } from './InputPassword';
-import { Button } from '../../components';
+import { InputPassword } from '../../components';
+import { MainActiveButton } from '../../components';
 import { useNavigate } from 'react-router-dom';
-
-const TITLE = 'Commune.ai';
-const DESCRIPTION = 'Secure and fast multi-chain crypto wallet.';
 
 export const Login = () => {
 
     const navigate = useNavigate();
-    const [password, setPassword] = useState('');
+
+    const [password, setPassword] = useState<string>('');
+    const [passwordValid, setPasswordValid] = useState<boolean>(false);
+
     const onUnlockWalletButtonClicked = () => {
-        localStorage.setItem("isPopup", "false");
         navigate('/homepage');
     }
-    const unlockWalletButtonProps = {
-        title: 'Unlock wallet',
-        buttonStyle: "rounded-2xl bg-[#D97A7A] disabled:bg-[#262632] text-white text-lg disabled:text-[#717173] w-[288px] h-[48px] mt-12",
-        onClick: onUnlockWalletButtonClicked,
-    }
+
     useEffect(() => {
         const flag = localStorage.getItem("isPopup");
         if (flag !== "popup") {
             chrome.tabs.create({ url: './onboard.html' });
         }
     }, [])
+
+    useEffect(() => {
+        if (password.trim()) {
+            setPasswordValid(true);
+        } else {
+            setPasswordValid(false);
+        }
+    },[password])
 
     return (
         <div className="popup-container">
@@ -35,16 +38,22 @@ export const Login = () => {
                 className='pt-16'
             />
             <p className='text-3xl text-white pt-2'>
-                {TITLE}
+                Commune.ai
             </p>
             <p className='text-base text-[#717173] w-[212px] pt-6 text-center'>
-                {DESCRIPTION}
+                Secure and fast multi-chain crypto wallet.
             </p>
             <InputPassword
                 password={password}
                 setPassword={setPassword}
             />
-            <Button {...unlockWalletButtonProps} />
+            <div className='mt-24'>
+                <MainActiveButton
+                    title='Unlock wallet'
+                    isDisabled={!passwordValid}
+                    onClick={onUnlockWalletButtonClicked}
+                />
+            </div>
         </div>
     )
 }

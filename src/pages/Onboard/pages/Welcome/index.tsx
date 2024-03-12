@@ -1,4 +1,4 @@
-import React from "react";
+
 import { WelcomeTextContainer } from "./WelcomeTextContainer";
 import { ButtonContainer } from "./ButtonContainer";
 import welcomeImage from "../../assets/images/Welcome-image.png";
