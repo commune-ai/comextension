@@ -1,13 +1,13 @@
 import { useState } from "react";
-import copyTextToClipboard from "copy-text-to-clipboard";
 import { useNavigate } from "react-router-dom";
-import { SecretWordContainer } from "./SecretWordContainer";
+import copyTextToClipboard from "copy-text-to-clipboard";
+import { SeedPhraseContainer } from "./SeedPhraseContainer";
 import { CopyToClipBoardWithEyeToggle } from "./CopyToClipBoardWithEyeToggle";
 import { Warning } from "./Warning";
-import { AgreeTermsOfService } from "../../components/AgreeTermsOfService";
-import { Button } from "../../components/Button";
+import { MainActiveButton } from "../../components";
+import { AgreeTermsOfService } from "../../components";
 
-const secretWords = [
+const seedPhrases = [
     'man',
     'hare',
     'Classic',
@@ -27,28 +27,25 @@ const DESCRIPTION = 'you will use this to secure your wallet';
 
 export const Recovery = () => {
     const navigate = useNavigate();
-    const [showSecretWords, setShowSecretWords] = useState(false);
-    const [isChecked, setIsChecked] = useState(false);
+
+    const [showSeedPhrases, setShowSeedPhrases] = useState<boolean>(false);
+    const [isChecked, setIsChecked] = useState<boolean>(false);
+
     const onEyeToggleClicked = () => {
-        setShowSecretWords((prev) => !prev);
+        setShowSeedPhrases((prev) => !prev);
     }
     const checkBoxToggle = () => {
         setIsChecked((prev) => !prev);
         console.log(isChecked)
     }
     const onCopyToClipboardClicked = () => {
-        const clipText = secretWords.join();
+        const clipText = seedPhrases.join();
         copyTextToClipboard(clipText);
     }
-    const onAdvanceClick = () => {
+    const onAdvanceButtonClick = () => {
         navigate('/verify');
     }
-    const advanceButtonProps = {
-        title: 'advance',
-        buttonStyle: "rounded-2xl bg-[#D97A7A] disabled:bg-[#262632] text-xl text-white disabled:text-[#717173] w-[484px] h-[60px] mt-10",
-        isDisabled: !isChecked,
-        onClick: onAdvanceClick,
-    }
+
     return (
             <>
                 <p className="text-white text-3xl mt-12">
@@ -57,12 +54,13 @@ export const Recovery = () => {
                 <p className="text-[#717173] text-xl mt-2">
                     {DESCRIPTION}
                 </p>
-                <SecretWordContainer
-                    words={secretWords}
-                    showSecretWords={showSecretWords}
+
+                <SeedPhraseContainer
+                    words={seedPhrases}
+                    showSeedPhrases={showSeedPhrases}
                 />
                 <CopyToClipBoardWithEyeToggle
-                    showSecretWords={showSecretWords}
+                    showSeedPhrases={showSeedPhrases}
                     onEyeToggleClicked={onEyeToggleClicked}
                     onCopyToClipboardClicked={onCopyToClipboardClicked}
                 />
@@ -71,7 +69,14 @@ export const Recovery = () => {
                     isChecked={isChecked}
                     checkBoxToggle={checkBoxToggle}
                 />
-                <Button {...advanceButtonProps} />
+                
+                <div className="mt-10">
+                    <MainActiveButton
+                        title='Advance'
+                        isDisabled={!isChecked}
+                        onClicked={onAdvanceButtonClick}
+                    />
+                </div>
             </> 
     )
 }

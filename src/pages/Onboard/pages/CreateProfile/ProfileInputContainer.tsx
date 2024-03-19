@@ -1,5 +1,3 @@
-// import { useEffect, useRef } from "react";
-
 import { ProfileInputContainerProps } from "../../types";
 
 const NAME_PLACEHOLDER = 'Type your name';

@@ -19,7 +19,7 @@ export const AboutCommuneItemContainer = () => {
     }
 
     return (
-        <div className="flex flex-col items-center gap-2 w-full mt-8">
+        <div className="flex flex-col items-center gap-2 w-full mt-16">
             <AboutCommuneItem
                 itemTitle="Terms of Service"
                 onItemClicked={onTermsOfServiceClicked}

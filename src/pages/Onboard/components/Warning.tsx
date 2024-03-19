@@ -1,11 +1,12 @@
-
 import { PiWarningFill } from "react-icons/pi";
 
 export const Warning = (warningText: string) => {
     return (
-        <div className=''>
+        <div className="">
             <PiWarningFill />
-            <p>{warningText}</p>
+            <p>
+                {warningText}
+            </p>
         </div>
     )
 }

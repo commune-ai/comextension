@@ -1,8 +1,12 @@
 export interface ButtonProps {
     title: string,
-    buttonStyle: string,
-    isDisabled?: boolean,
-    onClick: () => void,
+    onClicked: () => void,
+}
+
+export interface ActiveButtonProps {
+    title: string,
+    isDisabled: boolean,
+    onClicked: () => void,
 }
 
 export interface AgreeTermsOfServiceProps {
@@ -25,8 +29,7 @@ export interface InputPasswordProps {
 }
 
 export interface CopyToClipBoardWithEyeToggleProps {
-    showSecretWords: boolean,
+    showSeedPhrases: boolean,
     onEyeToggleClicked: () => void,
     onCopyToClipboardClicked: () => void,
 }
-

@@ -1,4 +1,3 @@
-
 import { WelcomeTextContainer } from "./WelcomeTextContainer";
 import { ButtonContainer } from "./ButtonContainer";
 import welcomeImage from "../../assets/images/Welcome-image.png";
@@ -9,7 +8,13 @@ export const Welcome = () => {
     return (
         <div className="welcome-container">
             <WelcomeTextContainer />
-            <img src={welcomeImage} alt={WELCOME} className="pt-10"/>
+
+            <img
+                src={welcomeImage}
+                alt={WELCOME}
+                className="pt-10"
+            />
+
             <ButtonContainer />
         </div>
     )

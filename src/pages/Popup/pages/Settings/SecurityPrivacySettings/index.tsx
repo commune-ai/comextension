@@ -1,4 +1,5 @@
 import { SettingItemContainer } from "./SettingItemContainer";
+import { ShareAnonymousData } from "./ShareAnonymousData";
 import { BackHeader } from "../../../container";
 
 export const SecurityPrivacySettings = () => {
@@ -9,6 +10,7 @@ export const SecurityPrivacySettings = () => {
                 headerTitle="Security & Privacy"
             />
             <SettingItemContainer />
+            <ShareAnonymousData />
         </div>
     )
 }
